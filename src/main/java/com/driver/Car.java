@@ -17,7 +17,7 @@ public class Car extends Vehicle {
         this.isManual=isManual;
         this.type=type;
         this.seats=seats;
-        super.name=name;
+        this.name=name;
         this.currentGear=1;
     }
     public Car(){
