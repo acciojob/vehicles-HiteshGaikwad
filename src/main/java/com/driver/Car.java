@@ -1,7 +1,6 @@
 package com.driver;
 
 public class Car extends Vehicle {
-    private int wheels;
 
     public int getWheels() {
         return wheels;
@@ -59,10 +58,11 @@ public class Car extends Vehicle {
         this.seats = seats;
     }
 
+    private int wheels;
     private String type;
     private int doors;
     private int gears;
-     boolean isManual;
+    private boolean isManual;
     private int currentGear;
     private int seats;
 
@@ -71,17 +71,14 @@ public class Car extends Vehicle {
     }
     public Car(String name, int wheels, int doors, int gears, boolean isManual,String type, int seats) {
         //Hint: Car extends Vehicle
+        super(name);
         this.wheels=wheels;
         this.doors=doors;
         this.gears=gears;
         this.isManual=isManual;
         this.type=type;
         this.seats=seats;
-        getName();
         this.currentGear=1;
-    }
-    public Car(){
-
     }
 
     public void changeGear(int newGear){
@@ -91,20 +88,8 @@ public class Car extends Vehicle {
 
     public void changeSpeed(int newSpeed, int newDirection){
 
-        System.out.println("changeSpeed method called - The speed is changed to: " + newSpeed + ", and the direction is changed to: " + newDirection + " degrees");
         move(newSpeed,newDirection);
-        if(this.getCurrentSpeed() >0 && this.getCurrentSpeed() <=50){
-            this.changeGear(1);
-        }else if(this.getCurrentSpeed()>50 && this.getCurrentSpeed()<=100){
-            this.changeGear(2);
-        }else if(this.getCurrentSpeed()>100 && this.getCurrentSpeed()<=150){
-            this.changeGear(3);
-        }else if(this.getCurrentSpeed()>150 && this.getCurrentSpeed()<=200){
-            this.changeGear(4);
-        }else if(this.getCurrentSpeed()>200 && this.getCurrentSpeed()<=250){
-            this.changeGear(5);
-        }else if(this.getCurrentSpeed()>250){
-            this.changeGear(6);
-        }
+        System.out.println("changeSpeed method called - The speed is changed to: " + newSpeed + ", and the direction is changed to: " + newDirection + " degrees");
+
     }
 }
